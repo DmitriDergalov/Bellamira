@@ -1,0 +1,35 @@
+{% if suits_list %}
+    <table border="1">
+     <caption>Белламира</caption>
+	 <tr>
+	  <th>№</th>
+	  <th>Название</th>
+	  <th>Пол</th>
+	  <th>Эпоха</th>
+	  <th>Размер</th>
+	  <th>Описание</th>
+	  <th>Себестоимость</th>
+	  <th>На кого сшит</th>
+	  <th>Общая цена аренды</th>
+	  <th>Цена на мероприятия партнёров</th>
+	  <th>Цена студентам</th>
+	  <th>Цена тому, на кого сшит</th>
+	 </tr>
+	 {% for suit in suits_list %}
+	     <tr>
+		  <td>{{ suit.code }}</td>
+		  <td>{{ suit.name }}</td>
+		  <td>{{ suit.gender }}</td>
+		  <td>{{ suit.style }}</td>
+		  <td>{{ suit.sizes }}</td>
+		  <td>{{ suit.description }}</td>
+		  <td>{{ suit.sebest }}</td>
+		  <td>{{ suit.person }}</td>
+		  <td>{{ suit.default_rent_price }}</td>
+		  <td>{{ suit.rent_price_partners }}</td>
+		  <td>{{ suit.rent_price_students }}</td>
+		  <td>{{ suit.rent_price_person }}</td>
+		 </tr>
+	 {% endfor %}
+	</table>
+{% endif %}
